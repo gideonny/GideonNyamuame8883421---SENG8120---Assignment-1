@@ -9,7 +9,7 @@ public class TestMain {
     // This is a test method for the calculateVolumeRectangularPrism method
     // 1) It checks if the method returns the expected volume for given dimensions
     private static void testCalculateVolumeRectangularPrism(int length, int width, int height, int expectedVolume) {
-        int actualVolume = Main.calculateVolumeRectangularPrism(length, width, height);
+        long actualVolume = Main.calculateVolumeRectangularPrism(length, width, height);
         if (actualVolume == expectedVolume) {
             System.out.println("Test passed: " + actualVolume);
         } else {
