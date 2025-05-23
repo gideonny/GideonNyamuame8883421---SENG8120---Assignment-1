@@ -1,6 +1,7 @@
 public class TestMain {
     public static void main(String[] args) {
         testCalculateVolumeRectangularPrism(2, 3, 4, 24);
+        testNegativeNumbers(-1, 2, 3); // This should throw an exception
     }
 
     // This is a test method for the calculateVolumeRectangularPrism method
@@ -11,6 +12,15 @@ public class TestMain {
             System.out.println("Test passed: " + actualVolume);
         } else {
             System.out.println("Test failed: expected " + expectedVolume + ", but got " + actualVolume);
+        }
+    }
+
+    private static void testNegativeNumbers(int length, int width, int height){
+        try {
+            Main.calculateVolumeRectangularPrism(length, width, height); //Trying to pass negative numbers
+            System.out.println("Test failed: Please input positive numbers");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Test passed: " + e.getMessage());
         }
     }
 }
